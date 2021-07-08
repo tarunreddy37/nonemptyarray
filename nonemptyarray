@@ -1,0 +1,32 @@
+import java.util.*;
+class nonemptyarray
+{
+public static void main(String args[])
+{
+	int size,i;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter array size:");
+	size=sc.nextInt();
+	int ar[];
+	ar=new int[size];
+	System.out.println("enter array elements:");
+	for(i=0;i<size;i++)
+	{
+		ar[i]=sc.nextInt();
+	}
+	if(ar[size-1]<9)
+		ar[size-1]=ar[size-1]+1;
+	else
+	{
+		i=1;
+		while(ar[size-i]==9 && size!=i)
+		{
+			ar[size-i]=0;
+			i++;
+		}
+		ar[size-i]=ar[size-i]+1;
+	}
+	for(i=0;i<size;i++)
+		System.out.print(ar[i]+" ");
+}
+}
